@@ -1,4 +1,4 @@
-<?xml version="1.1" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <template>
 	<uid>org.bayrell.alpine_wordpress</uid>
 	<name>WordPress alpine</name>
@@ -14,7 +14,7 @@
 	<link name="Marketplace">https://cloud.bayrell.org/ru/marketplace/app/org.bayrell.alpine_wordpress</link>
 	<license>GNU GPL 2+</license>
     <description locale="en_US">WordPress (WP, WordPress.org) is a free and open-source content management system (CMS) written in PHP[4] and paired with a MySQL or MariaDB database. Features include a plugin architecture and a template system, referred to within WordPress as Themes. WordPress was originally created as a blog-publishing system but has evolved to support other web content types including more traditional mailing lists and forums, media galleries, membership sites, learning management systems (LMS) and online stores. One of the most popular content management system solutions in use, WordPress is used by 42.8% of the top 10 million websites as of October 2021.</description>
-    <description locale="ru_RU">WordPress - cвободно распространяемая система управления содержимым сайта с открытым исходным кодом; написана на PHP; сервер базы данных — MySQL; выпущена под лицензией GNU GPL версии 2. Сфера применения — от блогов до достаточно сложных новостных ресурсов. Встроенная система «тем» и «плагинов» вместе с удачной архитектурой позволяет конструировать проекты широкой функциональной сложности.</description>
+    <description locale="ru_RU">WordPress - cРІРѕР±РѕРґРЅРѕ СЂР°СЃРїСЂРѕСЃС‚СЂР°РЅВ¤РµРјР°В¤ СЃРёСЃС‚РµРјР° СѓРїСЂР°РІР»РµРЅРёВ¤ СЃРѕРґРµСЂР¶РёРјС‹Рј СЃР°Р№С‚Р° СЃ РѕС‚РєСЂС‹С‚С‹Рј РёСЃС…РѕРґРЅС‹Рј РєРѕРґРѕРј; РЅР°РїРёСЃР°РЅР° РЅР° PHP; СЃРµСЂРІРµСЂ Р±Р°Р·С‹ РґР°РЅРЅС‹С… Р§ MySQL; РІС‹РїСѓС‰РµРЅР° РїРѕРґ Р»РёС†РµРЅР·РёРµР№ GNU GPL РІРµСЂСЃРёРё 2. вЂ”С„РµСЂР° РїСЂРёРјРµРЅРµРЅРёВ¤ Р§ РѕС‚ Р±Р»РѕРіРѕРІ РґРѕ РґРѕСЃС‚Р°С‚РѕС‡РЅРѕ СЃР»РѕР¶РЅС‹С… РЅРѕРІРѕСЃС‚РЅС‹С… СЂРµСЃСѓСЂСЃРѕРІ. В¬СЃС‚СЂРѕРµРЅРЅР°В¤ СЃРёСЃС‚РµРјР° Р‚С‚РµРјС— Рё Р‚РїР»Р°РіРёРЅРѕРІС— РІРјРµСЃС‚Рµ СЃ СѓРґР°С‡РЅРѕР№ Р°СЂС…РёС‚РµРєС‚СѓСЂРѕР№ РїРѕР·РІРѕР»В¤РµС‚ РєРѕРЅСЃС‚СЂСѓРёСЂРѕРІР°С‚СЊ РїСЂРѕРµРєС‚С‹ С€РёСЂРѕРєРѕР№ С„СѓРЅРєС†РёРѕРЅР°Р»СЊРЅРѕР№ СЃР»РѕР¶РЅРѕСЃС‚Рё.</description>
 	<yaml>
 		<services>
 			<_var_app_name_>
