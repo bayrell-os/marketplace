@@ -1,0 +1,43 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+<template>
+	<uid>org.bayrell.mariadb</uid>
+	<name>MariaDB</name>
+	<version>10.8.2-rc</version>
+	<maintainer>Ildar &lt;ildar@bayrell.org&gt;</maintainer>
+	<marketplace>https://cloud.bayrell.org/</marketplace>
+	<link name="Docker hub">https://hub.docker.com/_/mariadb</link>
+	<xml name="bayrell.org">https://cloud.bayrell.org/marketplace/org.bayrell.mariadb.xml</xml>
+	<xml name="github.com">https://raw.githubusercontent.com/bayrell-os/marketplace/main/org.bayrell.mariadb.xml</xml>
+	<date>2022-05-14T16:19:00+06:00</date>
+	<yaml>
+		<services>
+			<_var_app_name_>
+				<image>docker.io/mariadb:10.8.2-rc</image>
+				<hostname>{{.Service.Name}}.{{.Task.ID}}.local</hostname>
+				<environment>
+					<MARIADB_ROOT_PASSWORD>_var_mysql_password_</MARIADB_ROOT_PASSWORD>
+				</environment>
+				<volumes>_var_app_name_:/var/lib/mysql</volumes>
+			</_var_app_name_>
+		</services>
+    <volumes>
+		<_var_app_name_ />
+    </volumes>
+	</yaml>
+	<variables>
+		<variable>
+			<name>_var_mysql_password_</name>
+			<label>MySQL root password</label>
+			<type>string</type>
+		</variable>
+	</variables>
+	<modificators>
+		<li>org.bayrell.modificator.cloud_os</li>
+		<li>org.bayrell.modificator.deploy_hostname</li>
+	</modificators>
+	<patch>
+		<name>Template patch</name>
+		<operations>
+		</operations>
+	</patch>
+</template>

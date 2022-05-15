@@ -1,0 +1,53 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+<template>
+	<uid>org.bayrell.rabbitmq</uid>
+	<name>RabbitMQ</name>
+	<version>3.8.9-management</version>
+	<maintainer>Ildar &lt;ildar@bayrell.org&gt;</maintainer>
+	<marketplace>https://cloud.bayrell.org/</marketplace>
+	<date>2022-05-15T00:22:00+06:00</date>
+	<xml name="bayrell.org">https://cloud.bayrell.org/marketplace/org.bayrell.rabbitmq.xml</xml>
+	<xml name="github.com">https://raw.githubusercontent.com/bayrell-os/marketplace/main/org.bayrell.rabbitmq.xml</xml>
+	<link name="Docker hub">https://hub.docker.com/_/rabbitmq</link>
+	<link name="Marketplace">https://cloud.bayrell.org/ru/marketplace/app/org.bayrell.rabbitmq</link>
+	<yaml>
+		<services>
+			<_var_app_name_>
+				<image>docker.io/rabbitmq:3.8.9-management</image>
+				<hostname>{{.Service.Name}}.{{.Task.ID}}.local</hostname>
+				<volumes>_var_app_name_:/var/lib/rabbitmq</volumes>
+			</_var_app_name_>
+		</services>
+		<volumes>
+			<_var_app_name_ />
+		</volumes>
+	</yaml>
+	<variables>
+		<variable>
+			<name>_var_app_name_</name>
+			<label>App name</label>
+			<type>string</type>
+		</variable>
+	</variables>
+	<admin>
+		<port>15672</port>
+		<nginx>
+			location ~* /applications/admin/_var_service_name_/api/(.*?)/(.*) {
+				proxy_pass http://15672._var_service_name_.cloud_network.example/api/$1/%2F/$2?$query_string;
+				include proxy_params;
+			}
+			location /applications/admin/_var_service_name_/ {
+				proxy_pass http://15672._var_service_name_.cloud_network.example/;
+				include proxy_params;
+			}
+		</nginx>
+	</admin>
+	<modificators>
+		<li>org.bayrell.modificator.cloud_os</li>
+		<li>org.bayrell.modificator.deploy_hostname</li>
+	</modificators>
+	<patch>
+		<name>Template patch</name>
+		<operations></operations>
+	</patch>
+</template>

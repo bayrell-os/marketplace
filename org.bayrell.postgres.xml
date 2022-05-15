@@ -1,0 +1,44 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+<template>
+	<uid>org.bayrell.postgres</uid>
+	<name>PostgreSQL</name>
+	<version>14.2</version>
+	<maintainer>Ildar &lt;ildar@bayrell.org&gt;</maintainer>
+	<marketplace>https://cloud_os.bayrell.org/</marketplace>
+	<link name="Docker hub">https://hub.docker.com/_/postgres</link>
+	<link name="Marketplace">https://cloud.bayrell.org/ru/marketplace/app/org.bayrell.postgres</link>
+	<xml name="bayrell.org">https://cloud.bayrell.org/marketplace/org.bayrell.postgres.xml</xml>
+	<xml name="github.com">https://raw.githubusercontent.com/bayrell-os/marketplace/main/org.bayrell.postgres.xml</xml>
+	<date>2022-05-17:09:00+06:00</date>
+	<yaml>
+		<services>
+			<_var_app_name_>
+				<image>docker.io/postgres:14.2</image>
+				<hostname>{{.Service.Name}}.{{.Task.ID}}.local</hostname>
+				<environment>
+					<POSTGRES_PASSWORD>_var_postgres_password_</POSTGRES_PASSWORD>
+				</environment>
+				<volumes>_var_app_name_:/var/lib/postgresql/data</volumes>
+			</_var_app_name_>
+		</services>
+		<volumes>
+			<_var_app_name_ />
+		</volumes>
+	</yaml>
+	<variables>
+		<variable>
+			<name>_var_postgres_password_</name>
+			<label>PostgreSQL root password</label>
+			<type>string</type>
+		</variable>
+	</variables>
+	<modificators>
+		<li>org.bayrell.modificator.cloud_os</li>
+		<li>org.bayrell.modificator.deploy_hostname</li>
+	</modificators>
+	<patch>
+		<name>Template patch</name>
+		<operations>
+		</operations>
+	</patch>
+</template>

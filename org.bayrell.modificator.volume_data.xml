@@ -1,0 +1,31 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+<patch>
+	<uid>org.bayrell.modificator.volume_data</uid>
+	<name>Volume /data</name>
+	<xml name="bayrell.org">https://cloud.bayrell.org/marketplace/org.bayrell.modificator.volume_data.xml</xml>
+	<xml name="github.com">https://raw.githubusercontent.com/bayrell-os/marketplace/main/org.bayrell.modificator.volume_data.xml</xml>
+	<version>1.0</version>
+	<date>2022-05-15T18:32:00+06:00</date>
+	<operations>
+		<operation type="add">
+			<path>/template/yaml/services/_var_app_name_</path>
+			<value>
+				<volumes>_var_app_name__data:/data</volumes>
+			</value>
+		</operation>
+		<operation type="add">
+			<path>/template/yaml</path>
+			<notExists>/template/yaml/volumes</notExists>
+			<value>
+				<volumes></volumes>
+			</value>
+		</operation>
+		<operation type="add">
+			<path>/template/yaml/volumes</path>
+			<notExists>/template/yaml/volumes/_var_app_name__data</notExists>
+			<value>
+				<_var_app_name__data />
+			</value>
+		</operation>
+	</operations>
+</patch>

@@ -1,0 +1,33 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+<patch>
+	<uid>org.bayrell.modificator.deploy_hostname</uid>
+	<name>Deploy hostname</name>
+	<version>1.0</version>
+	<xml name="bayrell.org">https://cloud.bayrell.org/marketplace/org.bayrell.modificator.deploy_hostname.xml</xml>
+	<xml name="github.com">https://raw.githubusercontent.com/bayrell-os/marketplace/main/org.bayrell.modificator.deploy_hostname.xml</xml>
+	<date>2022-05-15T18:32:00+06:00</date>
+	<operations>
+		<operation type="remove">
+			<path>/template/yaml/services/_var_app_name_/deploy/placement</path>
+		</operation>
+		<operation type="add">
+			<path>/template/yaml/services/_var_app_name_/deploy</path>
+			<value>
+				<placement>
+					<constraints type="array">node.hostname == _var_hostname_</constraints>
+				</placement>
+			</value>
+		</operation>
+		<operation type="add">
+			<path>/template/variables</path>
+			<notExists>/template/variables/variable[name="_var_hostname_"]</notExists>
+			<value>
+				<variable>
+					<name>_var_hostname_</name>
+					<label>Hostname</label>
+					<type>string</type>
+				</variable>
+			</value>
+		</operation>
+	</operations>
+</patch>

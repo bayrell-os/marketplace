@@ -1,0 +1,39 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+<template>
+	<uid>org.bayrell.blank</uid>
+	<name>Blank Template</name>
+	<version>1.0</version>
+	<maintainer>Ildar &lt;ildar@bayrell.org&gt;</maintainer>
+	<marketplace>https://cloud_os.bayrell.org/</marketplace>
+	<xml name="bayrell.org">https://cloud.bayrell.org/marketplace/org.bayrell.blank.xml</xml>
+	<xml name="github.com">https://raw.githubusercontent.com/bayrell-os/marketplace/main/org.bayrell.blank.xml</xml>
+	<date>2022-05-14T18:37:00+06:00</date>
+	<yaml>
+		<services>
+			<_var_app_name_>
+				<image>_var_image_</image>
+				<hostname>{{.Service.Name}}.{{.Task.ID}}.local</hostname>
+				<environment>
+				</environment>
+			</_var_app_name_>
+		</services>
+    <volumes>
+    </volumes>
+	</yaml>
+	<variables>
+		<variable>
+			<name>_var_image_</name>
+			<label>Image</label>
+			<type>string</type>
+		</variable>
+	</variables>
+	<modificators>
+		<li>org.bayrell.modificator.cloud_os</li>
+		<li>org.bayrell.modificator.deploy_hostname</li>
+	</modificators>
+	<patch>
+		<name>Template patch</name>
+		<operations>
+		</operations>
+	</patch>
+</template>
