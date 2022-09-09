@@ -3,9 +3,9 @@
 	<uid>org.bayrell.modificator.deploy_hostname</uid>
 	<name>Deploy hostname</name>
 	<version>1.0</version>
-	<xml name="bayrell.org">https://cloud.bayrell.org/marketplace/org.bayrell.modificator.deploy_hostname.xml</xml>
-	<xml name="github.com">https://raw.githubusercontent.com/bayrell-os/marketplace/main/org.bayrell.modificator.deploy_hostname.xml</xml>
-	<date>2022-05-15T18:32:00+06:00</date>
+	<xml name="bayrell.org" priority="10">https://cloud.bayrell.org/marketplace/org.bayrell.modificator.deploy_hostname.xml</xml>
+	<xml name="github.com" priority="20">https://raw.githubusercontent.com/bayrell-os/marketplace/main/org.bayrell.modificator.deploy_hostname.xml</xml>
+	<date>2022-08-09T17:15:00+06:00</date>
 	<operations>
 		<operation type="remove">
 			<path>/template/yaml/services/_var_app_name_/deploy/placement</path>

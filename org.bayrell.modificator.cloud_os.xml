@@ -1,13 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<patch>
+<?xml version="1.1" encoding="UTF-8" ?>
+<modificator>
 	<uid>org.bayrell.modificator.cloud_os</uid>
 	<name>Cloud OS</name>
-	<xml name="bayrell.org">https://cloud.bayrell.org/marketplace/org.bayrell.modificator.cloud_os.xml</xml>
-	<xml name="github.com">https://raw.githubusercontent.com/bayrell-os/marketplace/main/org.bayrell.modificator.cloud_os.xml</xml>
-	<version>1.1</version>
-	<date>2022-05-15T18:32:00+06:00</date>
+	<date>2022-08-09T17:15:00+06:00</date>
+	<version>1.4</version>
 	<priority>-1000</priority>
 	<operations>
+    
 		<operation type="add" position="first">
 			<path>/template/yaml</path>
 			<notExists>/template/yaml/version</notExists>
@@ -15,6 +14,15 @@
 				<version>3.7</version>
 			</value>
 		</operation>
+		
+		<operation type="add">
+			<path>/template/yaml/services/_var_app_name_</path>
+			<notExists>/template/yaml/services/_var_app_name_/hostname</notExists>
+			<value>
+				<hostname>{{.Service.Name}}.{{.Task.ID}}.local</hostname>
+			</value>
+		</operation>
+		
 		<operation type="add">
 			<path>/template/yaml/services/_var_app_name_</path>
 			<notExists>/template/yaml/services/_var_app_name_/environment</notExists>
@@ -22,6 +30,7 @@
 				<environment></environment>
 			</value>
 		</operation>
+		
 		<operation type="add">
 			<path>/template/yaml/services/_var_app_name_</path>
 			<notExists>/template/yaml/services/_var_app_name_/logging</notExists>
@@ -31,6 +40,7 @@
 				</logging>
 			</value>
 		</operation>
+			
 		<operation type="add">
 			<path>/template/yaml/services/_var_app_name_</path>
 			<notExists>/template/yaml/services/_var_app_name_/deploy</notExists>
@@ -46,12 +56,21 @@
 					</update_config>
 					<restart_policy>
 						<condition>on-failure</condition>
-						<delay>10s</delay>
+						<delay>20s</delay>
 						<window>120s</window>
 					</restart_policy>
 				</deploy>
 			</value>
 		</operation>
+			
+		<operation type="add">
+			<path>/template/yaml/services/_var_app_name_</path>
+			<notExists>/template/yaml/services/_var_app_name_/dns</notExists>
+			<value>
+				<dns type="array">172.30.0.1</dns>
+			</value>
+		</operation>
+		
 		<operation type="add">
 			<path>/template/yaml/services/_var_app_name_</path>
 			<notExists>/template/yaml/services/_var_app_name_/networks</notExists>
@@ -59,6 +78,7 @@
 				<networks type="array">cloud_network</networks>
 			</value>
 		</operation>
+			
 		<operation type="add">
 			<path>/template/yaml</path>
 			<notExists>/template/yaml/networks</notExists>
@@ -70,19 +90,22 @@
 				</networks>
 			</value>
 		</operation>
+		
 		<operation type="add">
 			<path>/template/yaml/services/_var_app_name_/environment</path>
 			<value>
-				<DOCKER>1</DOCKER>
 				<NODE_ID>{{.Node.ID}}</NODE_ID>
 				<TASK_ID>{{.Task.ID}}</TASK_ID>
 				<SERVICE_ID>{{.Service.ID}}</SERVICE_ID>
+				<TZ>Asia/Almaty</TZ>
 			</value>
 		</operation>
+		
 		<!-- Patch last -->
+		
 		<operation type="add" priority="1000">
 			<path>/template/variables</path>
-			<notExists>/template/variables/variable[name=_var_app_name_]</notExists>
+			<notExists>/template/variables/variable[name="_var_app_name_"]</notExists>
 			<value>
 				<variable>
 					<name>_var_app_name_</name>
@@ -91,45 +114,54 @@
 				</variable>
 			</value>
 		</operation>
+		
 		<operation type="addAttribute" priority="1000">
 			<path>/template/yaml/services/_var_app_name_/volumes</path>
 			<name>type</name>
 			<value>array</value>
 		</operation>
+		
 		<operation type="addAttribute" priority="1000">
 			<path>/template/yaml/services/_var_app_name_/env_file</path>
 			<name>type</name>
 			<value>array</value>
 		</operation>
+		
 		<operation type="addAttribute" priority="1000">
 			<path>/template/yaml/services/_var_app_name_/ports</path>
 			<name>type</name>
 			<value>array</value>
 		</operation>
+		
 		<operation type="addAttribute" priority="1000">
 			<path>/template/yaml/services/_var_app_name_/environment</path>
 			<name>type</name>
 			<value>map</value>
 		</operation>
+		
 		<operation type="addAttribute" priority="1000">
 			<path>/template/yaml/volumes</path>
 			<name>type</name>
 			<value>map</value>
 		</operation>
+		
 		<operation type="addAttribute" priority="1000">
 			<path>/template/yaml/volumes/*</path>
 			<name>type</name>
 			<value>map</value>
 		</operation>
+		
 		<operation type="addAttribute" priority="1000">
 			<path>/template/yaml/services/_var_app_name_/ports/target</path>
 			<name>type</name>
 			<value>int</value>
 		</operation>
+		
 		<operation type="addAttribute" priority="1000">
 			<path>/template/yaml/services/_var_app_name_/ports/published</path>
 			<name>type</name>
 			<value>int</value>
 		</operation>
+		
 	</operations>
-</patch>
+</modificator>

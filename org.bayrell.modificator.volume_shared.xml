@@ -1,0 +1,36 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+<modificator>
+	<uid>org.bayrell.modificator.volume_shared</uid>
+	<name>Volume /shared</name>
+    <date>2022-08-09T17:15:00+06:00</date>
+	<version>1.0</version>
+	<operations>
+		
+		<operation type="add">
+			<path>/template/yaml/services/_var_app_name_</path>
+			<value>
+				<volumes>_var_folder_shared_:/shared</volumes>
+			</value>
+		</operation>
+		
+		<operation type="add">
+			<path>/template/yaml</path>
+			<notExists>/template/yaml/volumes</notExists>
+			<value>
+				<volumes></volumes>
+			</value>
+		</operation>
+		
+		<operation type="add">
+			<path>/template/yaml/variables</path>
+			<value>
+				<variable>
+					<name>_var_folder_shared_</name>
+					<label>Shared folder</label>
+					<type>string</type>
+				</variable>
+			</value>
+		</operation>
+		
+	</operations>
+</modificator>
