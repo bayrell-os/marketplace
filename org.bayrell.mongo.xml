@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<template>
+	<uid>org.bayrell.mongo</uid>
+	<name>MongoDB</name>
+	<version>3.6.23-xenial</version>
+	<maintainer>Ildar &lt;ildar@bayrell.org&gt;</maintainer>
+	<marketplace>https://cloud.bayrell.org/</marketplace>
+	<link name="Docker hub">https://hub.docker.com/_/mongo</link>
+	<xml name="bayrell.org">https://cloud.bayrell.org/marketplace/org.bayrell.mongo.xml</xml>
+	<xml name="github.com">https://raw.githubusercontent.com/bayrell-os/marketplace/main/org.bayrell.mongo.xml</xml>
+	<date>2022-09-19T22:36:00+06:00</date>
+	<yaml>
+		<services>
+			<_var_app_name_>
+				<image>docker.io/mongo:3.6.23-xenial</image>
+				<command>--auth --journal --port 27017 --bind_ip 0.0.0.0 --setParameter internalQueryExecMaxBlockingSortBytes=1073741824</command>
+				<volumes>_var_app_name_:/var/lib/mysql</volumes>
+			</_var_app_name_>
+		</services>
+    <volumes>
+		<_var_app_name_ />
+    </volumes>
+	</yaml>
+	<variables>
+	</variables>
+	<modificators>
+		<li>org.bayrell.modificator.cloud_os</li>
+		<li>org.bayrell.modificator.deploy_hostname</li>
+	</modificators>
+	<patch>
+		<name>Template patch</name>
+		<operations>
+		</operations>
+	</patch>
+</template>

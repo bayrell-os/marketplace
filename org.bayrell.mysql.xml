@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <template>
-	<uid>org.bayrell.mariadb</uid>
-	<name>MariaDB</name>
-	<version>10.8.2-rc</version>
+	<uid>org.bayrell.mysql</uid>
+	<name>MySQL</name>
+	<version>5.7.39</version>
 	<maintainer>Ildar &lt;ildar@bayrell.org&gt;</maintainer>
 	<marketplace>https://cloud.bayrell.org/</marketplace>
-	<link name="Docker hub">https://hub.docker.com/_/mariadb</link>
-	<xml name="bayrell.org">https://cloud.bayrell.org/marketplace/org.bayrell.mariadb.xml</xml>
-	<xml name="github.com">https://raw.githubusercontent.com/bayrell-os/marketplace/main/org.bayrell.mariadb.xml</xml>
-	<date>2022-05-14T16:19:00+06:00</date>
+	<link name="Docker hub">https://hub.docker.com/_/mysql</link>
+	<xml name="bayrell.org">https://cloud.bayrell.org/marketplace/org.bayrell.mysql.xml</xml>
+	<xml name="github.com">https://raw.githubusercontent.com/bayrell-os/marketplace/main/org.bayrell.mysql.xml</xml>
+	<date>2022-09-19T22:36:00+06:00</date>
 	<yaml>
 		<services>
 			<_var_app_name_>
-				<image>docker.io/mariadb:10.8.2-rc</image>
+				<image>docker.io/mysql:5.7.39</image>
+				<command>--character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --sql-mode="" --ft_min_word_len=1</command>
 				<environment>
-					<MARIADB_ROOT_PASSWORD>_var_mysql_password_</MARIADB_ROOT_PASSWORD>
+					<MYSQL_ROOT_PASSWORD>_var_mysql_password_</MYSQL_ROOT_PASSWORD>
 				</environment>
 				<volumes>_var_app_name_:/var/lib/mysql</volumes>
 			</_var_app_name_>
