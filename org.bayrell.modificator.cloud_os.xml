@@ -94,9 +94,10 @@
 		<operation type="add">
 			<path>/template/yaml/services/*/environment</path>
 			<value>
-				<NODE_ID>{{.Node.ID}}</NODE_ID>
-				<TASK_ID>{{.Task.ID}}</TASK_ID>
-				<SERVICE_ID>{{.Service.ID}}</SERVICE_ID>
+				<DOCKER_NODE_ID>{{.Node.ID}}</DOCKER_NODE_ID>
+				<DOCKER_TASK_ID>{{.Task.ID}}</DOCKER_TASK_ID>
+				<DOCKER_SERVICE_ID>{{.Service.ID}}</DOCKER_SERVICE_ID>
+				<DOCKER_SERVICE_NAME>{{.Service.Name}}</DOCKER_SERVICE_NAME>
 				<TZ>Asia/Almaty</TZ>
 			</value>
 		</operation>
