@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<template>
+	<uid>org.bayrell.memcached</uid>
+	<name>Memcached</name>
+	<version>1.6.17</version>
+	<maintainer>Ildar &lt;ildar@bayrell.org&gt;</maintainer>
+	<marketplace>https://cloud.bayrell.org/</marketplace>
+	<link name="Docker hub">https://hub.docker.com/_/memcached</link>
+	<xml name="bayrell.org">https://cloud.bayrell.org/marketplace/org.bayrell.memcached.xml</xml>
+	<xml name="github.com">https://raw.githubusercontent.com/bayrell-os/marketplace/main/org.bayrell.memcached.xml</xml>
+	<date>2022-09-21T17:23:00+06:00</date>
+	<yaml>
+		<services>
+			<_var_app_name_>
+				<image>docker.io/memcached:1.6.17</image>
+				<volumes>_var_app_name_:/var/lib/mysql</volumes>
+			</_var_app_name_>
+		</services>
+    <volumes>
+		<_var_app_name_ />
+    </volumes>
+	</yaml>
+	<variables>
+	</variables>
+	<modificators>
+		<li>org.bayrell.modificator.cloud_os</li>
+		<li>org.bayrell.modificator.deploy_hostname</li>
+	</modificators>
+	<patch>
+		<name>Template patch</name>
+		<operations>
+		</operations>
+	</patch>
+</template>
