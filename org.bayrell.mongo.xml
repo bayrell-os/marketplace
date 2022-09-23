@@ -14,12 +14,14 @@
 			<_var_app_name_>
 				<image>docker.io/mongo:3.6.23-xenial</image>
 				<command>--auth --journal --port 27017 --bind_ip 0.0.0.0 --setParameter internalQueryExecMaxBlockingSortBytes=1073741824</command>
-				<volumes>_var_app_name_:/var/lib/mysql</volumes>
+				<volumes>_var_app_name__config:/data/configdb</volumes>
+				<volumes>_var_app_name__db:/data/db</volumes>
 			</_var_app_name_>
 		</services>
-    <volumes>
-		<_var_app_name_ />
-    </volumes>
+		<volumes>
+			<_var_app_name__config />
+			<_var_app_name__db />
+		</volumes>
 	</yaml>
 	<variables>
 	</variables>
