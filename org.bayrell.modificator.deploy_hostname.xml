@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<patch>
+<modificator>
 	<uid>org.bayrell.modificator.deploy_hostname</uid>
 	<name>Deploy hostname</name>
 	<version>1.0</version>
@@ -30,4 +30,4 @@
 			</value>
 		</operation>
 	</operations>
-</patch>
+</modificator>

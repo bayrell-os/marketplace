@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<patch>
+<modificator>
 	<uid>org.bayrell.modificator.volume_data</uid>
 	<name>Volume /data</name>
 	<xml name="bayrell.org">https://cloud.bayrell.org/marketplace/org.bayrell.modificator.volume_data.xml</xml>
@@ -28,4 +28,4 @@
 			</value>
 		</operation>
 	</operations>
-</patch>
+</modificator>
