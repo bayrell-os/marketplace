@@ -105,7 +105,7 @@
 				<DOCKER_TASK_ID>{{.Task.ID}}</DOCKER_TASK_ID>
 				<DOCKER_SERVICE_ID>{{.Service.ID}}</DOCKER_SERVICE_ID>
 				<DOCKER_SERVICE_NAME>{{.Service.Name}}</DOCKER_SERVICE_NAME>
-				<TZ>Asia/Almaty</TZ>
+				<TZ>UTC</TZ>
 			</value>
 		</operation>
 		
