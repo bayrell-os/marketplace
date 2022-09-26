@@ -7,7 +7,7 @@
 	<operations>
 		
 		<operation type="add">
-			<path>/template/yaml/services/_var_app_name_</path>
+			<path>/template/yaml/services/*</path>
 			<value>
 				<volumes>_var_folder_shared_:/shared</volumes>
 			</value>

@@ -8,10 +8,10 @@
 	<date>2022-08-09T17:15:00+06:00</date>
 	<operations>
 		<operation type="remove">
-			<path>/template/yaml/services/_var_app_name_/deploy/placement</path>
+			<path>/template/yaml/services/*/deploy/placement</path>
 		</operation>
 		<operation type="add">
-			<path>/template/yaml/services/_var_app_name_/deploy</path>
+			<path>/template/yaml/services/*/deploy</path>
 			<value>
 				<placement>
 					<constraints type="array">node.hostname == _var_hostname_</constraints>
