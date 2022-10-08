@@ -1,0 +1,16 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+<modificator>
+	<uid>org.bayrell.modificator.dns.172.30.0.1</uid>
+	<name>DNS 172.30.0.1</name>
+	<version>1.0</version>
+	<operations>
+		
+		<operation type="replace">
+			<path>/template/yaml/services/*/dns</path>
+			<value>
+				<dns>172.30.0.1</dns>
+			</value>
+		</operation>
+		
+	</operations>
+</modificator>
